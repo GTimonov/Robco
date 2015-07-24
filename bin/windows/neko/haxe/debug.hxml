@@ -5,13 +5,17 @@
 -D lime=2.5.1
 -cp D:/HaxeToolkit/haxe/lib/actuate/1,8,6
 -D actuate=1.8.6
+-cp D:/HaxeToolkit/haxe/lib/nape/2,0,19
+-D nape=2.0.19
 -cp src
 -D lime-openal
 -D openfl-next
 -D tools=2.5.1
 -D lime-cairo
+-D NAPE_NO_INLINE
 -D no-compilation
 -D lime-opengl
+-D NAPE_RELEASE_BUILD
 -D native
 -D lime-native
 -D lime-curl
@@ -20,6 +24,7 @@
 -D windows
 -D desktop
 --remap flash:openfl
+-dce full
 -cp bin/windows/neko/haxe
 -neko bin/windows/neko/obj/ApplicationMain.n
 --macro keep("Main")

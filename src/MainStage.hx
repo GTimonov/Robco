@@ -7,7 +7,7 @@ import nape.phys.BodyType;
 import nape.shape.Polygon;
 import nape.space.Space;
 import nape.util.Debug;
-import nape.util.BitmapDebug;
+import nape.util.ShapeDebug;
 
 import openfl.display.Sprite;
 import openfl.events.Event;
@@ -52,12 +52,19 @@ class MainStage extends Sprite
 			
 		
 		gravity = Vec2.weak(0, 600);
-		debug = new BitmapDebug(stage.stageWidth, stage.stageHeight, 0xddff44);
+		debug = new ShapeDebug(stage.stageWidth, stage.stageHeight, 0xddff44);
+		
+		cast(debug, ShapeDebug).thickness = 1;
 		addChild(debug.display);
+		
 		space = new Space(gravity);
 		body = new Body(BodyType.DYNAMIC, new Vec2(50, 50));
-		body.shapes.add(new Polygon(Polygon.rect(50, (stage.stageHeight - 50), (stage.stageWidth - 100), 1)));
+		body.shapes.add(new Polygon(Polygon.rect(50, 50, 100, 100)));
 		body.space = space;
+		
+		var staticBody = new Body(BodyType.STATIC, new Vec2(0, 0));
+		staticBody.shapes.add(new Polygon(Polygon.rect(0, (stage.stageHeight - 50), (stage.stageWidth), 50)));
+		staticBody.space = space;
 		
 		addEventListener(Event.ENTER_FRAME, enterFrameHandler);
 	}
