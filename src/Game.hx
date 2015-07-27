@@ -15,7 +15,7 @@ import openfl.events.Event;
  * ...
  * @author George Timonov
  */
-class MainStage extends Sprite
+class Game extends Sprite
 {
 	var space:Space;
 	var body:Body;
@@ -51,15 +51,15 @@ class MainStage extends Sprite
         }
 			
 		
-		gravity = Vec2.weak(0, 600);
+		gravity = Vec2.weak(0, 50);
 		debug = new ShapeDebug(stage.stageWidth, stage.stageHeight, 0xddff44);
 		
 		cast(debug, ShapeDebug).thickness = 1;
 		addChild(debug.display);
 		
 		space = new Space(gravity);
-		body = new Body(BodyType.DYNAMIC, new Vec2(50, 50));
-		body.shapes.add(new Polygon(Polygon.rect(50, 50, 100, 100)));
+		body = new Body(BodyType.DYNAMIC, new Vec2(100, 100));
+		body.shapes.add(new Polygon(Polygon.rect(-50,-50, 100, 100)));
 		body.space = space;
 		
 		var staticBody = new Body(BodyType.STATIC, new Vec2(0, 0));

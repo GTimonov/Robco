@@ -15,10 +15,10 @@
 	<!-- classpath, haxe libs -->
 	<source path="src" />
 	<haxelib name="openfl" />
-	<haxelib name="actuate" />
+
 	<haxelib name="nape" />
-	
-	<haxeflag name="-dce full"/>
+			
+	<haxedef name="no-inline" />
 	<haxedef name="NAPE_RELEASE_BUILD"/>
     <haxedef name="NAPE_NO_INLINE" if="neko" />
 	
