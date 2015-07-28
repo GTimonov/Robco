@@ -2,8 +2,8 @@ package;
 
 import openfl.display.Sprite;
 import openfl.events.Event;
-import src.Game;
-import src.MainMenu;
+import views.Game;
+import views.MainMenuView;
 
 /**
  * ...
@@ -13,7 +13,7 @@ class Main extends Sprite
 {
 	
 	private var mainStage:Game = new Game();
-	private var mainMenu:MainMenu = new MainMenu();
+	private var mainMenu:MainMenuView = new MainMenuView();
 
 	public function new() 
 	{

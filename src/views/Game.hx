@@ -1,4 +1,4 @@
-package src;
+package views;
 
 
 import nape.geom.Vec2;

@@ -1,4 +1,4 @@
-package physics;
+package controllers;
 
 import openfl.events.EventDispatcher;
 import openfl.events.IEventDispatcher;
@@ -20,4 +20,4 @@ class PhysController extends EventDispatcher
 		
 	}
 	
-}
+} 
